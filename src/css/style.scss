@@ -1,0 +1,11 @@
+// Reset
+@use "./reset";
+
+// Global
+@use "./global";
+
+// Components
+@use "../components/card/card";
+@use "../components/main/main";
+@use "../components/player/player";
+@use "../components/sidebar/sidebar";

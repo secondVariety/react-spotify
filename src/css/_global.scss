@@ -1,0 +1,79 @@
+@use "./variables";
+
+body {
+  background: black;
+  color: #e1e1e1;
+  font-family: sans-serif;
+  margin: 0;
+}
+#root > div {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  min-height: 100vh;
+}
+
+// Flex
+
+.flex {
+  display: flex;
+  &__full {
+    flex: 1;
+  }
+}
+.align-items-center {
+  align-items: center;
+}
+
+// Grid
+.grid {
+  display: grid;
+  &--two {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  &--three {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  &--four {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  &--gap--small {
+    gap: variables.$small-margin;
+  }
+}
+
+// Margin
+.margin {
+  &--bottom--small {
+    margin-bottom: variables.$small-margin;
+  }
+  &--top--small {
+    margin-top: variables.$small-margin;
+  }
+  &--bottom--medium {
+    margin-bottom: variables.$medium-margin;
+  }
+  &--top--medium {
+    margin-top: variables.$medium-margin;
+  }
+  &--bottom--large {
+    margin-bottom: variables.$large-margin;
+  }
+  &--top--large {
+    margin-top: variables.$large-margin;
+  }
+  &--top--none {
+    margin-top: 0;
+  }
+  &--right--small {
+    margin-right: variables.$small-margin;
+  }
+  &--left--small {
+    margin-left: variables.$small-margin;
+  }
+  &--right--medium {
+    margin-right: variables.$medium-margin;
+  }
+  &--left--medium {
+    margin-left: variables.$medium-margin;
+  }
+}

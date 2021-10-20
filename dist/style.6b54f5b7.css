@@ -1,0 +1,645 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: black;
+  color: #e1e1e1;
+  font-family: sans-serif;
+  margin: 0;
+}
+
+#root > div {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  min-height: 100vh;
+}
+
+.flex {
+  display: flex;
+}
+.flex__full {
+  flex: 1;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.grid {
+  display: grid;
+}
+.grid--two {
+  grid-template-columns: repeat(2, 1fr);
+}
+.grid--three {
+  grid-template-columns: repeat(3, 1fr);
+}
+.grid--four {
+  grid-template-columns: repeat(4, 1fr);
+}
+.grid--gap--small {
+  gap: 0.5rem;
+}
+
+.margin--bottom--small {
+  margin-bottom: 0.5rem;
+}
+.margin--top--small {
+  margin-top: 0.5rem;
+}
+.margin--bottom--medium {
+  margin-bottom: 1rem;
+}
+.margin--top--medium {
+  margin-top: 1rem;
+}
+.margin--bottom--large {
+  margin-bottom: 2rem;
+}
+.margin--top--large {
+  margin-top: 2rem;
+}
+.margin--top--none {
+  margin-top: 0;
+}
+.margin--right--small {
+  margin-right: 0.5rem;
+}
+.margin--left--small {
+  margin-left: 0.5rem;
+}
+.margin--right--medium {
+  margin-right: 1rem;
+}
+.margin--left--medium {
+  margin-left: 1rem;
+}
+
+@keyframes progress-90 {
+  0% {
+    background: linear-gradient(90deg, #1db954 0%, black 0%);
+  }
+  10% {
+    background: linear-gradient(90deg, #1db954 9%, black 9%);
+  }
+  20% {
+    background: linear-gradient(90deg, #1db954 18%, black 18%);
+  }
+  30% {
+    background: linear-gradient(90deg, #1db954 27%, black 27%);
+  }
+  40% {
+    background: linear-gradient(90deg, #1db954 36%, black 36%);
+  }
+  50% {
+    background: linear-gradient(90deg, #1db954 45%, black 45%);
+  }
+  60% {
+    background: linear-gradient(90deg, #1db954 54%, black 54%);
+  }
+  70% {
+    background: linear-gradient(90deg, #1db954 63%, black 63%);
+  }
+  80% {
+    background: linear-gradient(90deg, #1db954 72%, black 72%);
+  }
+  90% {
+    background: linear-gradient(90deg, #1db954 81%, black 81%);
+  }
+  95% {
+    background: linear-gradient(90deg, #1db954 85.5%, black 85.5%);
+  }
+  100% {
+    background: linear-gradient(90deg, #1db954 90%, black 90%);
+  }
+}
+@keyframes progress-95 {
+  0% {
+    background: linear-gradient(90deg, #1db954 0%, black 0%);
+  }
+  10% {
+    background: linear-gradient(90deg, #1db954 9.5%, black 9.5%);
+  }
+  20% {
+    background: linear-gradient(90deg, #1db954 19%, black 19%);
+  }
+  30% {
+    background: linear-gradient(90deg, #1db954 28.5%, black 28.5%);
+  }
+  40% {
+    background: linear-gradient(90deg, #1db954 38%, black 38%);
+  }
+  50% {
+    background: linear-gradient(90deg, #1db954 47.5%, black 47.5%);
+  }
+  60% {
+    background: linear-gradient(90deg, #1db954 57%, black 57%);
+  }
+  70% {
+    background: linear-gradient(90deg, #1db954 66.5%, black 66.5%);
+  }
+  80% {
+    background: linear-gradient(90deg, #1db954 76%, black 76%);
+  }
+  90% {
+    background: linear-gradient(90deg, #1db954 85.5%, black 85.5%);
+  }
+  95% {
+    background: linear-gradient(90deg, #1db954 90.25%, black 90.25%);
+  }
+  100% {
+    background: linear-gradient(90deg, #1db954 95%, black 95%);
+  }
+}
+@keyframes progress-100 {
+  0% {
+    background: linear-gradient(90deg, #1db954 0%, black 0%);
+  }
+  10% {
+    background: linear-gradient(90deg, #1db954 10%, black 10%);
+  }
+  20% {
+    background: linear-gradient(90deg, #1db954 20%, black 20%);
+  }
+  30% {
+    background: linear-gradient(90deg, #1db954 30%, black 30%);
+  }
+  40% {
+    background: linear-gradient(90deg, #1db954 40%, black 40%);
+  }
+  50% {
+    background: linear-gradient(90deg, #1db954 50%, black 50%);
+  }
+  60% {
+    background: linear-gradient(90deg, #1db954 60%, black 60%);
+  }
+  70% {
+    background: linear-gradient(90deg, #1db954 70%, black 70%);
+  }
+  80% {
+    background: linear-gradient(90deg, #1db954 80%, black 80%);
+  }
+  90% {
+    background: linear-gradient(90deg, #1db954 90%, black 90%);
+  }
+  95% {
+    background: linear-gradient(90deg, #1db954 95%, black 95%);
+  }
+  100% {
+    background: linear-gradient(90deg, #1db954 100%, black 100%);
+  }
+}
+@keyframes progress-10 {
+  0% {
+    background: linear-gradient(90deg, #1db954 0%, black 0%);
+  }
+  10% {
+    background: linear-gradient(90deg, #1db954 1%, black 1%);
+  }
+  20% {
+    background: linear-gradient(90deg, #1db954 2%, black 2%);
+  }
+  30% {
+    background: linear-gradient(90deg, #1db954 3%, black 3%);
+  }
+  40% {
+    background: linear-gradient(90deg, #1db954 4%, black 4%);
+  }
+  50% {
+    background: linear-gradient(90deg, #1db954 5%, black 5%);
+  }
+  60% {
+    background: linear-gradient(90deg, #1db954 6%, black 6%);
+  }
+  70% {
+    background: linear-gradient(90deg, #1db954 7%, black 7%);
+  }
+  80% {
+    background: linear-gradient(90deg, #1db954 8%, black 8%);
+  }
+  90% {
+    background: linear-gradient(90deg, #1db954 9%, black 9%);
+  }
+  95% {
+    background: linear-gradient(90deg, #1db954 9.5%, black 9.5%);
+  }
+  100% {
+    background: linear-gradient(90deg, #1db954 10%, black 10%);
+  }
+}
+@keyframes progress-20 {
+  0% {
+    background: linear-gradient(90deg, #1db954 0%, black 0%);
+  }
+  10% {
+    background: linear-gradient(90deg, #1db954 2%, black 2%);
+  }
+  20% {
+    background: linear-gradient(90deg, #1db954 4%, black 4%);
+  }
+  30% {
+    background: linear-gradient(90deg, #1db954 6%, black 6%);
+  }
+  40% {
+    background: linear-gradient(90deg, #1db954 8%, black 8%);
+  }
+  50% {
+    background: linear-gradient(90deg, #1db954 10%, black 10%);
+  }
+  60% {
+    background: linear-gradient(90deg, #1db954 12%, black 12%);
+  }
+  70% {
+    background: linear-gradient(90deg, #1db954 14%, black 14%);
+  }
+  80% {
+    background: linear-gradient(90deg, #1db954 16%, black 16%);
+  }
+  90% {
+    background: linear-gradient(90deg, #1db954 18%, black 18%);
+  }
+  95% {
+    background: linear-gradient(90deg, #1db954 19%, black 19%);
+  }
+  100% {
+    background: linear-gradient(90deg, #1db954 20%, black 20%);
+  }
+}
+@keyframes progress-70 {
+  0% {
+    background: linear-gradient(90deg, #1db954 0%, black 0%);
+  }
+  10% {
+    background: linear-gradient(90deg, #1db954 7%, black 7%);
+  }
+  20% {
+    background: linear-gradient(90deg, #1db954 14%, black 14%);
+  }
+  30% {
+    background: linear-gradient(90deg, #1db954 21%, black 21%);
+  }
+  40% {
+    background: linear-gradient(90deg, #1db954 28%, black 28%);
+  }
+  50% {
+    background: linear-gradient(90deg, #1db954 35%, black 35%);
+  }
+  60% {
+    background: linear-gradient(90deg, #1db954 42%, black 42%);
+  }
+  70% {
+    background: linear-gradient(90deg, #1db954 49%, black 49%);
+  }
+  80% {
+    background: linear-gradient(90deg, #1db954 56%, black 56%);
+  }
+  90% {
+    background: linear-gradient(90deg, #1db954 63%, black 63%);
+  }
+  95% {
+    background: linear-gradient(90deg, #1db954 66.5%, black 66.5%);
+  }
+  100% {
+    background: linear-gradient(90deg, #1db954 70%, black 70%);
+  }
+}
+@keyframes progress-40 {
+  0% {
+    background: linear-gradient(90deg, #1db954 0%, black 0%);
+  }
+  10% {
+    background: linear-gradient(90deg, #1db954 4%, black 4%);
+  }
+  20% {
+    background: linear-gradient(90deg, #1db954 8%, black 8%);
+  }
+  30% {
+    background: linear-gradient(90deg, #1db954 12%, black 12%);
+  }
+  40% {
+    background: linear-gradient(90deg, #1db954 16%, black 16%);
+  }
+  50% {
+    background: linear-gradient(90deg, #1db954 20%, black 20%);
+  }
+  60% {
+    background: linear-gradient(90deg, #1db954 24%, black 24%);
+  }
+  70% {
+    background: linear-gradient(90deg, #1db954 28%, black 28%);
+  }
+  80% {
+    background: linear-gradient(90deg, #1db954 32%, black 32%);
+  }
+  90% {
+    background: linear-gradient(90deg, #1db954 36%, black 36%);
+  }
+  95% {
+    background: linear-gradient(90deg, #1db954 38%, black 38%);
+  }
+  100% {
+    background: linear-gradient(90deg, #1db954 40%, black 40%);
+  }
+}
+@keyframes progress-60 {
+  0% {
+    background: linear-gradient(90deg, #1db954 0%, black 0%);
+  }
+  10% {
+    background: linear-gradient(90deg, #1db954 6%, black 6%);
+  }
+  20% {
+    background: linear-gradient(90deg, #1db954 12%, black 12%);
+  }
+  30% {
+    background: linear-gradient(90deg, #1db954 18%, black 18%);
+  }
+  40% {
+    background: linear-gradient(90deg, #1db954 24%, black 24%);
+  }
+  50% {
+    background: linear-gradient(90deg, #1db954 30%, black 30%);
+  }
+  60% {
+    background: linear-gradient(90deg, #1db954 36%, black 36%);
+  }
+  70% {
+    background: linear-gradient(90deg, #1db954 42%, black 42%);
+  }
+  80% {
+    background: linear-gradient(90deg, #1db954 48%, black 48%);
+  }
+  90% {
+    background: linear-gradient(90deg, #1db954 54%, black 54%);
+  }
+  95% {
+    background: linear-gradient(90deg, #1db954 57%, black 57%);
+  }
+  100% {
+    background: linear-gradient(90deg, #1db954 60%, black 60%);
+  }
+}
+@keyframes progress-50 {
+  0% {
+    background: linear-gradient(90deg, #1db954 0%, black 0%);
+  }
+  10% {
+    background: linear-gradient(90deg, #1db954 5%, black 5%);
+  }
+  20% {
+    background: linear-gradient(90deg, #1db954 10%, black 10%);
+  }
+  30% {
+    background: linear-gradient(90deg, #1db954 15%, black 15%);
+  }
+  40% {
+    background: linear-gradient(90deg, #1db954 20%, black 20%);
+  }
+  50% {
+    background: linear-gradient(90deg, #1db954 25%, black 25%);
+  }
+  60% {
+    background: linear-gradient(90deg, #1db954 30%, black 30%);
+  }
+  70% {
+    background: linear-gradient(90deg, #1db954 35%, black 35%);
+  }
+  80% {
+    background: linear-gradient(90deg, #1db954 40%, black 40%);
+  }
+  90% {
+    background: linear-gradient(90deg, #1db954 45%, black 45%);
+  }
+  95% {
+    background: linear-gradient(90deg, #1db954 47.5%, black 47.5%);
+  }
+  100% {
+    background: linear-gradient(90deg, #1db954 50%, black 50%);
+  }
+}
+@keyframes progress-80 {
+  0% {
+    background: linear-gradient(90deg, #1db954 0%, black 0%);
+  }
+  10% {
+    background: linear-gradient(90deg, #1db954 8%, black 8%);
+  }
+  20% {
+    background: linear-gradient(90deg, #1db954 16%, black 16%);
+  }
+  30% {
+    background: linear-gradient(90deg, #1db954 24%, black 24%);
+  }
+  40% {
+    background: linear-gradient(90deg, #1db954 32%, black 32%);
+  }
+  50% {
+    background: linear-gradient(90deg, #1db954 40%, black 40%);
+  }
+  60% {
+    background: linear-gradient(90deg, #1db954 48%, black 48%);
+  }
+  70% {
+    background: linear-gradient(90deg, #1db954 56%, black 56%);
+  }
+  80% {
+    background: linear-gradient(90deg, #1db954 64%, black 64%);
+  }
+  90% {
+    background: linear-gradient(90deg, #1db954 72%, black 72%);
+  }
+  95% {
+    background: linear-gradient(90deg, #1db954 76%, black 76%);
+  }
+  100% {
+    background: linear-gradient(90deg, #1db954 80%, black 80%);
+  }
+}
+.icon--css {
+  background: #2965f1;
+}
+
+.icon--sass {
+  background: #bf4080;
+}
+
+.icon--less {
+  background: #1d365d;
+}
+
+.icon--js {
+  background: #f7df1e;
+}
+
+.icon--html {
+  background: #e34c26;
+}
+
+.icon--mysql {
+  background: #f29111;
+}
+
+.icon--webpack {
+  background: #8ed5fa;
+}
+
+.icon--git {
+  background: #f34f29;
+}
+
+.icon--react {
+  background: #7cc5d9;
+}
+
+.icon--vue {
+  background: #41b883;
+}
+
+.icon--php {
+  background: #8993be;
+}
+
+.card {
+  align-items: center;
+  border-radius: 5px;
+  display: flex;
+  font-size: 0.75rem;
+}
+.card > span {
+  position: relative;
+}
+.card > span:before,
+.card > span span {
+  align-items: center;
+  bottom: 0;
+  color: black;
+  display: flex;
+  font-size: 3rem;
+  font-weight: bold;
+  justify-content: center;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.card > span:before {
+  content: attr(data-text);
+  color: white;
+  font-size: 1rem;
+}
+@media all and (max-width: 960px) {
+  .card > span:before {
+    content: "";
+  }
+}
+.card--hoz {
+  background: rgba(255, 255, 255, 0.2);
+}
+@media all and (max-width: 960px) {
+  .card--hoz {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+.card--hoz dl {
+  flex: 1;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  width: 100%;
+}
+.card--hoz dl dt {
+  font-weight: bold;
+}
+.card--hoz dl dd {
+  margin-left: 0;
+}
+.card--hoz span {
+  margin: 0;
+  max-height: 460px;
+  max-width: 460px;
+  padding-bottom: 20%;
+  width: 20%;
+}
+@media all and (max-width: 960px) {
+  .card--hoz span {
+    width: 100%;
+  }
+}
+.card--hoz:nth-child(even) span:before {
+  color: black;
+}
+.card--vert {
+  flex-direction: column;
+  text-decoration: none;
+}
+.card--vert div {
+  display: block;
+  opacity: 0.75;
+  text-align: center;
+}
+.card--vert > span {
+  background: linear-gradient(360deg, grey 20%, rgba(211, 211, 211, 0) 100%);
+  padding-bottom: 100%;
+  width: 100%;
+}
+
+.progress-bar {
+  background: black;
+  display: block;
+  height: 2px;
+  margin-top: 0.25rem;
+  transition: all 0.5s;
+  width: 100%;
+}
+.progress-bar--10 {
+  animation: progress-10 1s ease-out forwards;
+}
+.progress-bar--20 {
+  animation: progress-20 1s ease-out forwards;
+}
+.progress-bar--40 {
+  animation: progress-40 1s ease-out forwards;
+}
+.progress-bar--50 {
+  animation: progress-50 1s ease-out forwards;
+}
+.progress-bar--60 {
+  animation: progress-60 1s ease-out forwards;
+}
+.progress-bar--70 {
+  animation: progress-70 1s ease-out forwards;
+}
+.progress-bar--80 {
+  animation: progress-80 1s ease-out forwards;
+}
+.progress-bar--90 {
+  animation: progress-90 1s ease-out forwards;
+}
+.progress-bar--95 {
+  animation: progress-95 1s ease-out forwards;
+}
+.progress-bar--100 {
+  animation: progress-100 1s ease-out forwards;
+}
+
+main {
+  background: #000;
+  background: linear-gradient(340deg, black 70%, rgba(135, 206, 235, 0.5) 100%);
+  padding: 2rem;
+  position: relative;
+}
+
+aside {
+  background: #141414;
+}
+aside #aside-content {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 1rem 2rem;
+  position: fixed;
+  width: 25%;
+}
+
+/*# sourceMappingURL=/style.6b54f5b7.css.map */

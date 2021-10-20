@@ -1,0 +1,13 @@
+@use "../../css/variables";
+
+aside {
+  background: variables.$dark-grey;
+  #aside-content {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    padding: 1rem 2rem;
+    position: fixed;
+    width: 25%;
+  }
+}

@@ -1,0 +1,241 @@
+@use "../../css/variables";
+
+// Animations
+@mixin keyframes($name, $argument) {
+  @keyframes #{$name} {
+    0% {
+      background: linear-gradient(90deg, variables.$green 0%, black 0%);
+    }
+    10% {
+      background: linear-gradient(
+        90deg,
+        variables.$green percentage(($argument/100) * 10),
+        black percentage(($argument/100) * 10)
+      );
+    }
+    20% {
+      background: linear-gradient(
+        90deg,
+        variables.$green percentage(($argument/100) * 20),
+        black percentage(($argument/100) * 20)
+      );
+    }
+    30% {
+      background: linear-gradient(
+        90deg,
+        variables.$green percentage(($argument/100) * 30),
+        black percentage(($argument/100) * 30)
+      );
+    }
+    40% {
+      background: linear-gradient(
+        90deg,
+        variables.$green percentage(($argument/100) * 40),
+        black percentage(($argument/100) * 40)
+      );
+    }
+    50% {
+      background: linear-gradient(
+        90deg,
+        variables.$green percentage(($argument/100) * 50),
+        black percentage(($argument/100) * 50)
+      );
+    }
+    60% {
+      background: linear-gradient(
+        90deg,
+        variables.$green percentage(($argument/100) * 60),
+        black percentage(($argument/100) * 60)
+      );
+    }
+    70% {
+      background: linear-gradient(
+        90deg,
+        variables.$green percentage(($argument/100) * 70),
+        black percentage(($argument/100) * 70)
+      );
+    }
+    80% {
+      background: linear-gradient(
+        90deg,
+        variables.$green percentage(($argument/100) * 80),
+        black percentage(($argument/100) * 80)
+      );
+    }
+    90% {
+      background: linear-gradient(
+        90deg,
+        variables.$green percentage(($argument/100) * 90),
+        black percentage(($argument/100) * 90)
+      );
+    }
+    95% {
+      background: linear-gradient(
+        90deg,
+        variables.$green percentage(($argument/100) * 95),
+        black percentage(($argument/100) * 95)
+      );
+    }
+    100% {
+      background: linear-gradient(
+        90deg,
+        variables.$green percentage($argument),
+        black percentage($argument)
+      );
+    }
+  }
+}
+@include keyframes(progress-90, 0.9);
+@include keyframes(progress-95, 0.95);
+@include keyframes(progress-100, 1);
+@include keyframes(progress-10, 0.1);
+@include keyframes(progress-20, 0.2);
+@include keyframes(progress-70, 0.7);
+@include keyframes(progress-40, 0.4);
+@include keyframes(progress-60, 0.6);
+@include keyframes(progress-50, 0.5);
+@include keyframes(progress-80, 0.8);
+
+@mixin card-colours($name, $colour) {
+  .icon--#{$name} {
+    background: $colour;
+  }
+}
+
+@include card-colours("css", variables.$css-colour);
+@include card-colours("sass", variables.$sass-colour);
+@include card-colours("less", variables.$less-colour);
+@include card-colours("js", variables.$js-colour);
+@include card-colours("html", variables.$html-colour);
+@include card-colours("mysql", variables.$mysql-colour);
+@include card-colours("webpack", variables.$webpack-colour);
+@include card-colours("git", variables.$git-colour);
+@include card-colours("react", variables.$react-colour);
+@include card-colours("vue", variables.$vue-colour);
+@include card-colours("php", variables.$php-colour);
+
+.card {
+  align-items: center;
+  border-radius: 5px;
+  display: flex;
+  font-size: variables.$small-font-size;
+  > span {
+    position: relative;
+    &:before,
+    span {
+      align-items: center;
+      bottom: 0;
+      color: black;
+      display: flex;
+      font-size: 3rem;
+      font-weight: bold;
+      justify-content: center;
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    &:before {
+      content: attr(data-text);
+      color: white;
+      font-size: 1rem;
+      @media all and (max-width: 960px) {
+        content: "";
+      }
+    }
+  }
+  &--hoz {
+    background: transparentize(white, 0.8);
+    @media all and (max-width: 960px) {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+    dl {
+      flex: 1;
+      padding-left: variables.$small-padding;
+      padding-right: variables.$small-padding;
+      width: 100%;
+      dt {
+        font-weight: bold;
+      }
+      dd {
+        margin-left: 0;
+      }
+    }
+    span {
+      margin: 0;
+      max-height: 460px;
+      max-width: 460px;
+      padding-bottom: 20%;
+      width: 20%;
+      @media all and (max-width: 960px) {
+        width: 100%;
+      }
+    }
+    &:nth-child(even) {
+      span {
+        &:before {
+          color: black;
+        }
+      }
+    }
+  }
+  &--vert {
+    flex-direction: column;
+    text-decoration: none;
+    div {
+      display: block;
+      opacity: 0.75;
+      text-align: center;
+    }
+    > span {
+      background: linear-gradient(
+        360deg,
+        grey 20%,
+        transparentize(lightgrey, 1) 100%
+      );
+      padding-bottom: 100%;
+      width: 100%;
+    }
+  }
+}
+
+// Progress bar
+.progress-bar {
+  background: black;
+  display: block;
+  height: 2px;
+  margin-top: 0.25rem;
+  transition: all 0.5s;
+  width: 100%;
+  &--10 {
+    animation: progress-10 1s ease-out forwards;
+  }
+  &--20 {
+    animation: progress-20 1s ease-out forwards;
+  }
+  &--40 {
+    animation: progress-40 1s ease-out forwards;
+  }
+  &--50 {
+    animation: progress-50 1s ease-out forwards;
+  }
+  &--60 {
+    animation: progress-60 1s ease-out forwards;
+  }
+  &--70 {
+    animation: progress-70 1s ease-out forwards;
+  }
+  &--80 {
+    animation: progress-80 1s ease-out forwards;
+  }
+  &--90 {
+    animation: progress-90 1s ease-out forwards;
+  }
+  &--95 {
+    animation: progress-95 1s ease-out forwards;
+  }
+  &--100 {
+    animation: progress-100 1s ease-out forwards;
+  }
+}
