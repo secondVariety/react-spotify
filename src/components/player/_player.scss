@@ -1,0 +1,94 @@
+@use "../../css/variables";
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+#player {
+  margin-top: auto;
+  &__controls {
+    align-items: center;
+    display: flex;
+    gap: variables.$small-margin;
+    justify-content: center;
+    button {
+      align-items: center;
+      border: none;
+      cursor: none;
+      display: flex;
+      height: 30px;
+      justify-content: center;
+      opacity: 0.5;
+      width: 30px;
+      &.rounded {
+        border-radius: 50%;
+      }
+      &#player__controls__play {
+        cursor: pointer;
+        height: 40px;
+        opacity: 1;
+        width: 40px;
+        &.paused {
+          .pause-icon {
+            display: none;
+          }
+          .play-icon {
+            display: block !important;
+          }
+        }
+      }
+    }
+  }
+  &__msg {
+    font-size: variables.$small-font-size;
+    margin-top: 1rem;
+    overflow: hidden;
+    strong {
+      display: block;
+    }
+    em {
+      animation: marquee 5s linear infinite;
+      display: block;
+      font-style: normal;
+      &.paused {
+        animation-play-state: paused;
+      }
+    }
+  }
+  figure {
+    align-items: center;
+    background: linear-gradient(360deg, white 75%, fade(lightgrey, 100%) 100%);
+    display: flex;
+    gap: variables.$small-margin;
+    justify-content: center;
+    margin: variables.$small-margin auto;
+    height: 200px;
+    position: relative;
+    width: 200px;
+    .gary {
+      width: 75px;
+    }
+    .spotify {
+      color: variables.$green;
+      font-size: 4rem;
+    }
+    .heart {
+      align-items: center;
+      animation: heart-pumping 2s linear infinite;
+      bottom: 0;
+      color: red;
+      display: flex;
+      font-size: 2.5rem;
+      justify-content: center;
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+  }
+}

@@ -1,0 +1,44 @@
+@use "../../css/variables";
+
+nav {
+  ul {
+    list-style: none;
+    padding: 0;
+    li {
+      border-bottom: 1px solid variables.$dark-grey;
+      font-size: variables.$small-font-size;
+      &:last-of-type {
+        border: none;
+      }
+      a {
+        align-items: center;
+        display: flex;
+        padding: variables.$small-padding;
+        position: relative;
+        text-decoration: none;
+        &:hover,
+        &:focus,
+        &.selected {
+          background: transparentize(white, 0.8);
+          &:before {
+            display: block;
+          }
+        }
+        &:before {
+          background: variables.$green;
+          bottom: 4px;
+          content: "";
+          display: none;
+          left: 0;
+          position: absolute;
+          top: 4px;
+          width: 2px;
+        }
+        svg {
+          font-size: 0.91rem !important;
+          margin-right: variables.$small-margin;
+        }
+      }
+    }
+  }
+}
