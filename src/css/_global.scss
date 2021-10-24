@@ -17,6 +17,16 @@ a {
 }
 
 // Utility
+.avatar {
+  margin: 0;
+  max-height: 200px;
+  max-width: 200px;
+  img {
+    border-radius: 50%;
+    max-width: 100%;
+    width: 75px;
+  }
+}
 .hide {
   display: none;
 }

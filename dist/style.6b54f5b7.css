@@ -19,6 +19,17 @@ a {
   color: #e1e1e1;
 }
 
+.avatar {
+  margin: 0;
+  max-height: 200px;
+  max-width: 200px;
+}
+.avatar img {
+  border-radius: 50%;
+  max-width: 100%;
+  width: 75px;
+}
+
 .hide {
   display: none;
 }
@@ -464,50 +475,6 @@ a {
     background: linear-gradient(90deg, #1db954 80%, black 80%);
   }
 }
-.icon--css {
-  background: #2965f1;
-}
-
-.icon--sass {
-  background: #bf4080;
-}
-
-.icon--less {
-  background: #1d365d;
-}
-
-.icon--js {
-  background: #f7df1e;
-}
-
-.icon--html {
-  background: #e34c26;
-}
-
-.icon--mysql {
-  background: #f29111;
-}
-
-.icon--webpack {
-  background: #8ed5fa;
-}
-
-.icon--git {
-  background: #f34f29;
-}
-
-.icon--react {
-  background: #7cc5d9;
-}
-
-.icon--vue {
-  background: #41b883;
-}
-
-.icon--php {
-  background: #8993be;
-}
-
 .card {
   align-items: stretch;
   border-radius: 5px;
@@ -579,13 +546,16 @@ a {
 }
 .card--vert div {
   display: block;
+  margin: 0.5rem 0 0;
   opacity: 0.75;
   text-align: center;
 }
 .card--vert > span {
   background: linear-gradient(360deg, grey 20%, rgba(211, 211, 211, 0) 100%);
-  padding-bottom: 100%;
   width: 100%;
+}
+.card--vert > span img {
+  display: block;
 }
 
 .progress-bar {
@@ -777,6 +747,34 @@ aside #aside-content {
   padding: 1rem 2rem;
   position: fixed;
   width: 25%;
+}
+
+#search-pop-up {
+  background: black;
+  bottom: 0;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  left: 0;
+  opacity: 0;
+  padding: 1rem 2rem;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: all 0.5s;
+  z-index: -1;
+}
+#search-pop-up.visible {
+  opacity: 1;
+  z-index: 9;
+}
+#search-pop-up__query {
+  text-transform: capitalize;
+}
+
+form input[type=text] {
+  padding: 1rem 0.5rem;
+  width: 100%;
 }
 
 /*# sourceMappingURL=/style.6b54f5b7.css.map */

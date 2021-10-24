@@ -1,0 +1,28 @@
+#search-pop-up {
+  background: black;
+  bottom: 0;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  left: 0;
+  opacity: 0;
+  padding: 1rem 2rem;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: all 0.5s;
+  z-index: -1;
+  &.visible {
+    opacity: 1;
+    z-index: 9;
+  }
+  &__query {
+    text-transform: capitalize;
+  }
+}
+form {
+  input[type="text"] {
+    padding: 1rem 0.5rem;
+    width: 100%;
+  }
+}

@@ -96,24 +96,6 @@
 @include keyframes(progress-50, 0.5);
 @include keyframes(progress-80, 0.8);
 
-@mixin card-colours($name, $colour) {
-  .icon--#{$name} {
-    background: $colour;
-  }
-}
-
-@include card-colours("css", variables.$css-colour);
-@include card-colours("sass", variables.$sass-colour);
-@include card-colours("less", variables.$less-colour);
-@include card-colours("js", variables.$js-colour);
-@include card-colours("html", variables.$html-colour);
-@include card-colours("mysql", variables.$mysql-colour);
-@include card-colours("webpack", variables.$webpack-colour);
-@include card-colours("git", variables.$git-colour);
-@include card-colours("react", variables.$react-colour);
-@include card-colours("vue", variables.$vue-colour);
-@include card-colours("php", variables.$php-colour);
-
 .card {
   align-items: stretch;
   border-radius: 5px;
@@ -183,6 +165,7 @@
     text-decoration: none;
     div {
       display: block;
+      margin: 0.5rem 0 0;
       opacity: 0.75;
       text-align: center;
     }
@@ -192,8 +175,10 @@
         grey 20%,
         transparentize(lightgrey, 1) 100%
       );
-      padding-bottom: 100%;
       width: 100%;
+      img {
+        display: block;
+      }
     }
   }
 }

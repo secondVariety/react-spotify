@@ -4,10 +4,16 @@ const Card = (props) => {
       <span className={"icon--" + props.name.toLowerCase()}>
         <img src={props.img} alt={props.name} />
       </span>
-      <dl>
-        <dt>{props.name}</dt>
-        <dd className={"progress-bar progress-bar--" + props.progress}></dd>
-      </dl>
+      {props.progress ? (
+        <dl>
+          <dt>{props.name}</dt>
+          <dd className={"progress-bar progress-bar--" + props.progress}></dd>
+        </dl>
+      ) : (
+        <div>
+          <strong>{props.name}</strong>
+        </div>
+      )}
     </div>
   );
 };

@@ -35597,7 +35597,7 @@ const NavItem = props => {
         href: "#",
         id: props.title.toLowerCase() + "-btn",
         className: props.className,
-        onClick: e => searchModal(e.currentTarget.id),
+        onClick: props.func,
         children: [
         /*#__PURE__*/
         (0, _jsxRuntime.jsx)("i", {
@@ -35607,12 +35607,6 @@ const NavItem = props => {
     })
   );
 };
-
-function searchModal(input) {
-  if (input == "search-btn") {
-    console.log("launch search modal");
-  }
-}
 
 var _default = NavItem;
 exports.default = _default;
@@ -35627,6 +35621,8 @@ exports.default = void 0;
 var _player = _interopRequireDefault(require("../player/player"));
 
 var _navItem = _interopRequireDefault(require("../nav-item/nav-item"));
+
+var _functions = require("../../js/functions");
 
 var _jsxRuntime = require("react/jsx-runtime");
 
@@ -35656,7 +35652,14 @@ const Sidebar = props => {
             /*#__PURE__*/
             (0, _jsxRuntime.jsx)(_navItem.default, {
               title: "Search",
-              icon: "fas fa-search"
+              icon: "fas fa-search",
+              func: () => {
+                const $modal = document.querySelector("#search-pop-up");
+
+                if ((0, _functions.isElem)($modal)) {
+                  $modal.classList.toggle("visible");
+                }
+              }
             })]
           })
         }),
@@ -35671,7 +35674,7 @@ const Sidebar = props => {
 
 var _default = Sidebar;
 exports.default = _default;
-},{"../player/player":"components/player/player.js","../nav-item/nav-item":"components/nav-item/nav-item.js","react/jsx-runtime":"../node_modules/react/jsx-runtime.js"}],"components/card/card.js":[function(require,module,exports) {
+},{"../player/player":"components/player/player.js","../nav-item/nav-item":"components/nav-item/nav-item.js","../../js/functions":"js/functions.js","react/jsx-runtime":"../node_modules/react/jsx-runtime.js"}],"components/card/card.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -35696,7 +35699,7 @@ const Card = props => {
           src: props.img,
           alt: props.name
         })
-      }),
+      }), props.progress ?
       /*#__PURE__*/
       (0, _jsxRuntime.jsxs)("dl", {
         children: [
@@ -35708,12 +35711,115 @@ const Card = props => {
         (0, _jsxRuntime.jsx)("dd", {
           className: "progress-bar progress-bar--" + props.progress
         })]
+      }) :
+      /*#__PURE__*/
+      (0, _jsxRuntime.jsx)("div", {
+        children:
+        /*#__PURE__*/
+        (0, _jsxRuntime.jsx)("strong", {
+          children: props.name
+        })
       })]
     })
   );
 };
 
 var _default = Card;
+exports.default = _default;
+},{"react/jsx-runtime":"../node_modules/react/jsx-runtime.js"}],"components/modal/model.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _jsxRuntime = require("react/jsx-runtime");
+
+const Modal = () => {
+  return (
+    /*#__PURE__*/
+    (0, _jsxRuntime.jsxs)("div", {
+      id: "search-pop-up",
+      children: [
+      /*#__PURE__*/
+      (0, _jsxRuntime.jsx)("form", {
+        id: "search-pop-up__form",
+        method: "GET",
+        autoComplete: "off",
+        children:
+        /*#__PURE__*/
+        (0, _jsxRuntime.jsx)("input", {
+          type: "text",
+          id: "s",
+          name: "s",
+          placeholder: "Search for music"
+        })
+      }),
+      /*#__PURE__*/
+      (0, _jsxRuntime.jsx)("div", {
+        id: "search-pop-up__results",
+        children: "\xA0"
+      })]
+    })
+  );
+};
+
+var _default = Modal;
+exports.default = _default;
+},{"react/jsx-runtime":"../node_modules/react/jsx-runtime.js"}],"components/text-block/text-block.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _jsxRuntime = require("react/jsx-runtime");
+
+const TextBlock = () => {
+  return (
+    /*#__PURE__*/
+    (0, _jsxRuntime.jsxs)("div", {
+      children: [
+      /*#__PURE__*/
+      (0, _jsxRuntime.jsx)("h2", {
+        children: "About"
+      }),
+      /*#__PURE__*/
+      (0, _jsxRuntime.jsxs)("article", {
+        className: "flex covering-letter",
+        itemScope: "",
+        itemType: "https://schema.org/Person",
+        children: [
+        /*#__PURE__*/
+        (0, _jsxRuntime.jsxs)("div", {
+          children: [
+          /*#__PURE__*/
+          (0, _jsxRuntime.jsx)("p", {
+            children: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+          }),
+          /*#__PURE__*/
+          (0, _jsxRuntime.jsx)("p", {
+            children: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+          })]
+        }),
+        /*#__PURE__*/
+        (0, _jsxRuntime.jsx)("figure", {
+          children:
+          /*#__PURE__*/
+          (0, _jsxRuntime.jsx)("img", {
+            src: "https://via.placeholder.com/250",
+            alt: "",
+            itemProp: "image"
+          })
+        })]
+      })]
+    })
+  );
+};
+
+var _default = TextBlock;
 exports.default = _default;
 },{"react/jsx-runtime":"../node_modules/react/jsx-runtime.js"}],"components/main/main.js":[function(require,module,exports) {
 "use strict";
@@ -35726,6 +35832,10 @@ exports.default = void 0;
 var _card = _interopRequireDefault(require("./../card/card"));
 
 var _functions = require("../../js/functions");
+
+var _model = _interopRequireDefault(require("../modal/model"));
+
+var _textBlock = _interopRequireDefault(require("../text-block/text-block"));
 
 var _jsxRuntime = require("react/jsx-runtime");
 
@@ -35747,54 +35857,116 @@ const Main = props => {
         children: [
         /*#__PURE__*/
         (0, _jsxRuntime.jsx)(_card.default, {
-          img: "https://via.placeholder.com/100x100",
+          img: "https://via.placeholder.com/100",
           name: "#100 Podcast Name",
           orientation: "hoz",
           progress: "90"
         }),
         /*#__PURE__*/
         (0, _jsxRuntime.jsx)(_card.default, {
-          img: "https://via.placeholder.com/100x100",
+          img: "https://via.placeholder.com/100",
           name: "#10 Podcast Name",
           orientation: "hoz",
           progress: "85"
         }),
         /*#__PURE__*/
         (0, _jsxRuntime.jsx)(_card.default, {
-          img: "https://via.placeholder.com/100x100",
+          img: "https://via.placeholder.com/100",
           name: "#17 Podcast Name",
           orientation: "hoz",
           progress: "85"
         }),
         /*#__PURE__*/
         (0, _jsxRuntime.jsx)(_card.default, {
-          img: "https://via.placeholder.com/100x100",
+          img: "https://via.placeholder.com/100",
           name: "#20 Podcast Name",
           orientation: "hoz",
           progress: "90"
         }),
         /*#__PURE__*/
         (0, _jsxRuntime.jsx)(_card.default, {
-          img: "https://via.placeholder.com/100x100",
+          img: "https://via.placeholder.com/100",
           name: "#12 Podcast Name",
           orientation: "hoz",
           progress: "95"
         }),
         /*#__PURE__*/
         (0, _jsxRuntime.jsx)(_card.default, {
-          img: "https://via.placeholder.com/100x100",
+          img: "https://via.placeholder.com/100",
           name: "#18 Podcast Name",
           orientation: "hoz",
           progress: "40"
         })]
-      })]
+      }),
+      /*#__PURE__*/
+      (0, _jsxRuntime.jsxs)("div", {
+        className: "flex align-items-center margin--bottom--small",
+        children: [
+        /*#__PURE__*/
+        (0, _jsxRuntime.jsx)("figure", {
+          className: "avatar rounded margin--right--small",
+          children:
+          /*#__PURE__*/
+          (0, _jsxRuntime.jsx)("img", {
+            src: "https://via.placeholder.com/75",
+            alt: "Band Name"
+          })
+        }),
+        /*#__PURE__*/
+        (0, _jsxRuntime.jsxs)("div", {
+          className: "flex__full",
+          children: [
+          /*#__PURE__*/
+          (0, _jsxRuntime.jsx)("small", {
+            children: "More from"
+          }),
+          /*#__PURE__*/
+          (0, _jsxRuntime.jsx)("h2", {
+            className: "margin--top--none",
+            children: "Band Name"
+          })]
+        })]
+      }),
+      /*#__PURE__*/
+      (0, _jsxRuntime.jsxs)("div", {
+        className: "grid grid--four grid--gap--small",
+        children: [
+        /*#__PURE__*/
+        (0, _jsxRuntime.jsx)(_card.default, {
+          img: "https://via.placeholder.com/200",
+          name: "Album #1",
+          orientation: "vert"
+        }),
+        /*#__PURE__*/
+        (0, _jsxRuntime.jsx)(_card.default, {
+          img: "https://via.placeholder.com/200",
+          name: "Album #2",
+          orientation: "vert"
+        }),
+        /*#__PURE__*/
+        (0, _jsxRuntime.jsx)(_card.default, {
+          img: "https://via.placeholder.com/200",
+          name: "Album #3",
+          orientation: "vert"
+        }),
+        /*#__PURE__*/
+        (0, _jsxRuntime.jsx)(_card.default, {
+          img: "https://via.placeholder.com/200",
+          name: "Album #4",
+          orientation: "vert"
+        })]
+      }),
+      /*#__PURE__*/
+      (0, _jsxRuntime.jsx)(_textBlock.default, {}),
+      /*#__PURE__*/
+      (0, _jsxRuntime.jsx)(_model.default, {})]
     })
   );
 };
 
 var _default = Main;
 exports.default = _default;
-},{"./../card/card":"components/card/card.js","../../js/functions":"js/functions.js","react/jsx-runtime":"../node_modules/react/jsx-runtime.js"}],"js/app.js":[function(require,module,exports) {
+},{"./../card/card":"components/card/card.js","../../js/functions":"js/functions.js","../modal/model":"components/modal/model.js","../text-block/text-block":"components/text-block/text-block.js","react/jsx-runtime":"../node_modules/react/jsx-runtime.js"}],"js/app.js":[function(require,module,exports) {
 "use strict";
 
 var _reactDom = _interopRequireDefault(require("react-dom"));
@@ -35853,7 +36025,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "39307" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "39047" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
